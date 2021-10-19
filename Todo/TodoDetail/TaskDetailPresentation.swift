@@ -18,9 +18,9 @@ struct TaskDetailPresentation {
         self.deadline = deadline
     }
     init(task: Task) {
-        self.init(title:task.title ?? "",
+        self.init(title:task.title! ,
                   detail:task.detail ?? "",
                   deadline: task.deadline!)
-        print(deadline)
+      
     }
 }

@@ -33,6 +33,8 @@
 		F8E38DA82713858600639F40 /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E38DA72713858600639F40 /* TaskListPresenter.swift */; };
 		F8E38DAD271385A500639F40 /* TaskListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E38DAC271385A500639F40 /* TaskListRouter.swift */; };
 		F8E38DBC27138D2200639F40 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E38DBB27138D2200639F40 /* CoreDataManager.swift */; };
+		F8F6F8F7271D9383006BC29E /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6F8F6271D9383006BC29E /* DateFormatter+Extensions.swift */; };
+		F8F6F911271EC07D006BC29E /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6F910271EC07D006BC29E /* NotificationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		F8E38DA72713858600639F40 /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
 		F8E38DAC271385A500639F40 /* TaskListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRouter.swift; sourceTree = "<group>"; };
 		F8E38DBB27138D2200639F40 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F8F6F8F6271D9383006BC29E /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		F8F6F910271EC07D006BC29E /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +152,8 @@
 				F8E38D2F27137A6800639F40 /* SceneDelegate.swift */,
 				F87611F6271825EA0002C4E3 /* AppContainer.swift */,
 				F87611FB271825FE0002C4E3 /* AppRouter.swift */,
+				F8F6F8F5271D9355006BC29E /* Extensions */,
 				F8B98D812716DFF500681C4E /* Model */,
-				F8E38DC62713918200639F40 /* Entity */,
 				F8E38DB12713870200639F40 /* CoreData */,
 				F8E38D6327137A8E00639F40 /* TodoList */,
 				F8E38D6427137AAA00639F40 /* TodoDetail */,
@@ -215,11 +219,13 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		F8E38DC62713918200639F40 /* Entity */ = {
+		F8F6F8F5271D9355006BC29E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F8F6F8F6271D9383006BC29E /* DateFormatter+Extensions.swift */,
+				F8F6F910271EC07D006BC29E /* NotificationExtension.swift */,
 			);
-			path = Entity;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +361,7 @@
 			files = (
 				F8E38DA32713857900639F40 /* TaskListInteractor.swift in Sources */,
 				F8E38D3227137A6800639F40 /* TaskListViewController.swift in Sources */,
+				F8F6F8F7271D9383006BC29E /* DateFormatter+Extensions.swift in Sources */,
 				F87612DB27196D7E0002C4E3 /* TaskDetailBuilder.swift in Sources */,
 				F87611D62718103D0002C4E3 /* Task+CoreDataClass.swift in Sources */,
 				F8E38D942713855300639F40 /* TaskListPresentation.swift in Sources */,
@@ -364,6 +371,7 @@
 				F8E38D9E2713856C00639F40 /* TaskListContracts.swift in Sources */,
 				F8E38DAD271385A500639F40 /* TaskListRouter.swift in Sources */,
 				F87611FC271825FE0002C4E3 /* AppRouter.swift in Sources */,
+				F8F6F911271EC07D006BC29E /* NotificationExtension.swift in Sources */,
 				F8E38D992713855E00639F40 /* TaskListBuilder.swift in Sources */,
 				F8E38D3027137A6800639F40 /* SceneDelegate.swift in Sources */,
 				F8E38D3827137A6800639F40 /* Todo.xcdatamodeld in Sources */,

@@ -19,6 +19,7 @@ protocol TaskListViewProtocol: NSObject {
 enum TaskListInteractorOutput {
     case showTaskDetail(Task)
     case showTaskList([Task])
+    case showEmptyTaskDetail
 }
 
 protocol TaskListInteractorDelegate: NSObject {
@@ -29,10 +30,13 @@ protocol TaskListInteractorProtocol: NSObject {
     var delegate: TaskListInteractorDelegate? { get set }
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
+    func tabbedAddButton()
     func getTasks()
-    func saveTask(task:Task)
-    func updateTask(task:Task)
-    func deleteTask(task: Task)
+    func buildNotificationCenter()
+//    func saveTask(task:Task)
+//    func updateTask(task:Task)
+    func deleteTask(at indexPath: IndexPath)
+    func sortTasks()
 }
 
 //MARK: Presenter
@@ -40,7 +44,9 @@ protocol TaskListInteractorProtocol: NSObject {
 protocol TaskListPresenterProtocol: NSObject {
     func viewDidLoad()
     func didSelectRow(at indexPath: IndexPath)
-    func tabbedAdded()
+    func tabbedAddButton()
+    func deleteRow(at indexPath: IndexPath)
+    func sort()
 }
 
 enum TaskListPresenterOutput {
@@ -50,6 +56,7 @@ enum TaskListPresenterOutput {
 //MARK: Router
 enum TaskListRoute {
     case showTaskDetail(Task)
+    case showEmptyTaskDetail
 }
 
 protocol TaskListRouterProtocol: NSObject {

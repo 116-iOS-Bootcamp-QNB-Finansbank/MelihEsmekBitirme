@@ -9,16 +9,45 @@ import Foundation
 
 class TaskDetailViewModel: TaskDetailViewModelProtocol{
     
-   weak var delegate: TaskDetailViewModelDelegate?
-    private let task : Task
     
-    init(task:Task){
+     private let service : CoreDataManagerProtocol
+   weak var delegate: TaskDetailViewModelDelegate?
+    private var task : Task?
+    
+    init(task:Task,service: CoreDataManagerProtocol){
         self.task = task
+        self.service = service
+    }
+   
+    init(service: CoreDataManagerProtocol){
+        self.service = service
     }
     func viewDidLoad() {
-        delegate?.showTaskDetail(task: TaskDetailPresentation(task: task))
+        if (task != nil){
+            delegate?.showTaskDetail(task: TaskDetailPresentation(task: task!))
+        }
     }
-
     
+
+    func saveTask(TaskPresentation : TaskDetailPresentation) {
+        if(task != nil) {
+            self.service.updateTask(TaskPresentation: TaskPresentation, task: task!)
+        } else{
+            service.saveTask(TaskPresentation: TaskPresentation)
+            }
+        
+    }
+    
+    func delete() {
+        if(task != nil){
+            service.deleteTask(task: task!)
+
+        }else{
+            return
+        }
+          
+        
+        
+    }
     
 }

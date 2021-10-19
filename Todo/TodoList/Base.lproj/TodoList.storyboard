@@ -40,7 +40,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="ToDo List" id="bvA-c4-b6A">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="blk-mb-8CT">
+                        <barButtonItem key="leftBarButtonItem" title="Sort By Date" id="bGq-lr-QjC">
+                            <connections>
+                                <action selector="tabbedSortButton:" destination="baH-J8-J3H" id="wdr-2T-kUu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="blk-mb-8CT">
                             <connections>
                                 <action selector="addedButton:" destination="baH-J8-J3H" id="WDF-Bu-nRM"/>
                             </connections>
