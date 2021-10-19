@@ -10,9 +10,9 @@ import CoreData
 
 
 protocol CoreDataManagerProtocol {
-    func saveTask(task:Task)
-    func getTask() -> [Task]
-    func updateTask(task:Task)
+    func saveTask(TaskPresentation:TaskDetailPresentation)
+    func getTask(sort:Bool) -> [Task]
+    func updateTask(TaskPresentation:TaskDetailPresentation, task: Task)
     func deleteTask(task:Task)
 }
 
@@ -21,28 +21,35 @@ class CoreDataManager: CoreDataManagerProtocol {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items:[Task]?
     
-        func saveTask(task:Task) {
-                let newTask = Task(context: self.context)
-                newTask.title = "textfield.text"
-                newTask.detail = "use core data"
-//                newTask.deadline = Date()
+    func saveContext(){
+        if context.hasChanges {
             do {
                 try self.context.save()
+                NotificationCenter.default.post(name: .refreshData, object: nil)
             } catch  {
                 
             }
         }
 
-    func getTask() -> [Task] {
-     
+    }
+    
+        func saveTask(TaskPresentation:TaskDetailPresentation) {
+            let newTask = Task(context: self.context)
+            newTask.title = TaskPresentation.title
+            newTask.detail = TaskPresentation.detail
+            newTask.deadline = TaskPresentation.deadline
+            self.saveContext()
+               
+           
+        }
+
+    func getTask(sort:Bool) -> [Task] {
+        let request = Task.fetchRequest() as NSFetchRequest<Task>
+        if sort {
+            let  sort = NSSortDescriptor(key: "deadline", ascending: false)
+            request.sortDescriptors = [sort]
+        }
         do{
-            let request = Task.fetchRequest() as NSFetchRequest<Task>
-// MARK:            Filter
-//
-//            let pred = NSPredicate(format: "title CONTAINS %@","Date")
-//            request.predicate = pred
-//            let  sort = NSSortDescriptor(key: "deadline", ascending: true)
-//            request.sortDescriptors = [sort]
             self.items = try context.fetch(request)
             
         }
@@ -52,13 +59,21 @@ class CoreDataManager: CoreDataManagerProtocol {
         return items ?? []
     }
     
-    func updateTask(task:Task) {
-        
+    func updateTask(TaskPresentation:TaskDetailPresentation, task: Task) {
+        task.title = TaskPresentation.title
+        task.detail = TaskPresentation.detail
+        task.deadline = TaskPresentation.deadline
+        saveContext()
+
     }
     
  
     func deleteTask(task:Task){
         
+            context.delete(task)
+        self.saveContext()
+    
+      
     }
     
     

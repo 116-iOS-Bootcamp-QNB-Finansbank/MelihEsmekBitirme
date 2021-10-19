@@ -8,11 +8,13 @@
 import Foundation
 
 protocol TaskDetailViewModelDelegate:NSObject {
-    func showTaskDetail(task: TaskDetailPresentation)
+    func showTaskDetail(task: TaskDetailPresentation?)
    
 }
 
 protocol TaskDetailViewModelProtocol {
     var delegate : TaskDetailViewModelDelegate? {get set}
     func viewDidLoad()
+    func saveTask(TaskPresentation: TaskDetailPresentation)
+    func delete()
 }

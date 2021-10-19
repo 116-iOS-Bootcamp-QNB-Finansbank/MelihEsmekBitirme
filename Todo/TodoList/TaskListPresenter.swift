@@ -8,11 +8,8 @@
 import Foundation
 
 class TaskListPresenter:NSObject, TaskListPresenterProtocol {
-    func tabbedAdded() {
-        
-    }
-    
-    
+  
+
     private unowned let view : TaskListViewProtocol
     private let router : TaskListRouterProtocol
     private var interactor : TaskListInteractorProtocol
@@ -33,6 +30,19 @@ class TaskListPresenter:NSObject, TaskListPresenterProtocol {
         
     }
     
+    func deleteRow(at indexPath: IndexPath) {
+        interactor.deleteTask(at: indexPath)
+    }
+    
+    func tabbedAddButton() {
+        interactor.tabbedAddButton()
+    }
+    
+    func sort() {
+        interactor.sortTasks()
+    }
+    
+    
 }
 extension TaskListPresenter: TaskListInteractorDelegate {
     func handleOutput(_ output: TaskListInteractorOutput) {
@@ -41,6 +51,8 @@ extension TaskListPresenter: TaskListInteractorDelegate {
             view.handleOutput(.showTaskList(tasks.map(TaskListPresentation.init)))
         case.showTaskDetail(let task):
             router.navigate(to: .showTaskDetail(task))
+        case.showEmptyTaskDetail:
+            router.navigate(to: .showEmptyTaskDetail)
         }
     }
     

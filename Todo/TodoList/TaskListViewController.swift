@@ -14,9 +14,7 @@ class TaskListViewController: UIViewController,TaskListViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setNavigationBar()
         presenter?.viewDidLoad()
-        
     }
     
     var presenter : TaskListPresenterProtocol?
@@ -33,8 +31,12 @@ class TaskListViewController: UIViewController,TaskListViewProtocol {
         
     }
     
+    @IBAction func tabbedSortButton(_ sender: Any) {
+        self.presenter?.sort()
+        
+    }
     @IBAction func addedButton(_ sender: Any) {
-        print("hello")
+        presenter?.tabbedAddButton()
     }
     
 }
@@ -49,6 +51,13 @@ extension TaskListViewController:UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+         
+            self.presenter?.deleteRow(at: indexPath)
+            }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
     
 }
 extension TaskListViewController: UITableViewDelegate {

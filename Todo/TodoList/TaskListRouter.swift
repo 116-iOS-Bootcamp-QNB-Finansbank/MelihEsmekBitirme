@@ -18,6 +18,10 @@ class TaskListRouter:NSObject,TaskListRouterProtocol {
         case .showTaskDetail(let task):
             let viewController = TaskDetailBuilder.build(with: task)
             self.view.navigationController?.pushViewController(viewController, animated: true)
+        case .showEmptyTaskDetail:
+            let viewcController = TaskDetailBuilder.buildEmpty()
+            self.view.navigationController?.pushViewController(viewcController, animated: true)
+            
         }
     }
     
