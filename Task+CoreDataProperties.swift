@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  Todo
 //
-//  Created by Melih Bugra Esmek on 14.10.2021.
+//  Created by Melih Bugra Esmek on 20.10.2021.
 //
 //
 
@@ -19,6 +19,7 @@ extension Task {
     @NSManaged public var deadline: Date?
     @NSManaged public var detail: String?
     @NSManaged public var title: String?
+    @NSManaged public var uuid: UUID?
 
 }
 

@@ -36,7 +36,7 @@ class TaskDetailViewController: UIViewController {
         
         guard let title = taskTitleField.text else { return }
         guard let detail = taskDetail.text else { return }
-        let taskPresantation = TaskDetailPresentation(title: title, detail: detail, deadline: taskDeadline.date)
+        let taskPresantation = TaskDetailPresentation(title: title, detail: detail, deadline: taskDeadline.date, uuid: UUID())
         viewModel.saveTask(TaskPresentation: taskPresantation)
         navigationController?.popViewController(animated: true)
 //        self.task?.title = title

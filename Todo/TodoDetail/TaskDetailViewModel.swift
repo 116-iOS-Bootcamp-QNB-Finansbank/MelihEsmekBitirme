@@ -13,13 +13,16 @@ class TaskDetailViewModel: TaskDetailViewModelProtocol{
      private let service : CoreDataManagerProtocol
    weak var delegate: TaskDetailViewModelDelegate?
     private var task : Task?
+    private let notification : NotificationManagerProtocol
     
-    init(task:Task,service: CoreDataManagerProtocol){
+    init(task:Task,service: CoreDataManagerProtocol,notification: NotificationManagerProtocol){
         self.task = task
         self.service = service
+        self.notification = notification
     }
    
-    init(service: CoreDataManagerProtocol){
+    init(service: CoreDataManagerProtocol,notification: NotificationManagerProtocol){
+        self.notification = notification
         self.service = service
     }
     func viewDidLoad() {
@@ -32,8 +35,10 @@ class TaskDetailViewModel: TaskDetailViewModelProtocol{
     func saveTask(TaskPresentation : TaskDetailPresentation) {
         if(task != nil) {
             self.service.updateTask(TaskPresentation: TaskPresentation, task: task!)
+            
         } else{
             service.saveTask(TaskPresentation: TaskPresentation)
+            notification.createNotification(task: TaskPresentation)
             }
         
     }
@@ -41,6 +46,7 @@ class TaskDetailViewModel: TaskDetailViewModelProtocol{
     func delete() {
         if(task != nil){
             service.deleteTask(task: task!)
+            notification.cancelNotification(task: task!)
 
         }else{
             return

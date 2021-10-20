@@ -38,6 +38,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             newTask.title = TaskPresentation.title
             newTask.detail = TaskPresentation.detail
             newTask.deadline = TaskPresentation.deadline
+            newTask.uuid = TaskPresentation.uuid
             self.saveContext()
                
            
@@ -60,6 +61,7 @@ class CoreDataManager: CoreDataManagerProtocol {
     }
     
     func updateTask(TaskPresentation:TaskDetailPresentation, task: Task) {
+        
         task.title = TaskPresentation.title
         task.detail = TaskPresentation.detail
         task.deadline = TaskPresentation.deadline
@@ -72,7 +74,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         
             context.delete(task)
         self.saveContext()
-    
+        
       
     }
     
