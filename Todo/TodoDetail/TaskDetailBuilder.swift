@@ -10,7 +10,7 @@ import Foundation
 class TaskDetailBuilder {
     static func build(with task: Task) -> TaskDetailViewController {
         let viewController = TaskDetailViewController()
-        let viewModel = TaskDetailViewModel(task: task, service: appContainer.service)
+        let viewModel = TaskDetailViewModel(task: task, service: appContainer.service,notification: appContainer.notification)
         viewController.viewModel = viewModel
       
         return viewController
@@ -18,7 +18,7 @@ class TaskDetailBuilder {
     
     static func buildEmpty() -> TaskDetailViewController {
         let viewController = TaskDetailViewController()
-        viewController.viewModel = TaskDetailViewModel(service: appContainer.service)
+        viewController.viewModel = TaskDetailViewModel(service: appContainer.service,notification: appContainer.notification)
         return viewController
     }
 }
