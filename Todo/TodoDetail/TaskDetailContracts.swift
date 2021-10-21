@@ -18,3 +18,4 @@ protocol TaskDetailViewModelProtocol {
     func saveTask(TaskPresentation: TaskDetailPresentation)
     func delete()
 }
+

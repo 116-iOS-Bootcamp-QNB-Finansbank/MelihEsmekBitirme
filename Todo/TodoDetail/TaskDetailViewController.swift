@@ -15,10 +15,7 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var taskDetail: UITextField!
     
     @IBOutlet weak var taskDeadline: UIDatePicker!
-    
-//     let task : Task?
-    
-    
+        
     var viewModel : TaskDetailViewModelProtocol! {
         didSet{
             viewModel.delegate = self
@@ -34,15 +31,25 @@ class TaskDetailViewController: UIViewController {
 
     @IBAction func tabbedSaveButton(_ sender: Any) {
         
-        guard let title = taskTitleField.text else { return }
+        
+        guard let title = taskTitleField.text, !title.isEmpty else {
+            showAlert()
+            return
+        }
         guard let detail = taskDetail.text else { return }
         let taskPresantation = TaskDetailPresentation(title: title, detail: detail, deadline: taskDeadline.date, uuid: UUID())
         viewModel.saveTask(TaskPresentation: taskPresantation)
         navigationController?.popViewController(animated: true)
-//        self.task?.title = title
-//        self.task?.detail = detail
-//        self.task?.deadline = taskDeadline.date
-//        viewModel.saveTask(_task: self.task!)
+
+    }
+    
+    func showAlert(){
+                let alert = UIAlertController(title: "Empty Title", message: "You have to fill title", preferredStyle: UIAlertController.Style.alert)
+
+            
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func tabbedDeleteButton(_ sender: Any) {

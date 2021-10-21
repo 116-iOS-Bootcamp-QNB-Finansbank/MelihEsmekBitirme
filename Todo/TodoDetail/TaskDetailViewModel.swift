@@ -8,8 +8,7 @@
 import Foundation
 
 class TaskDetailViewModel: TaskDetailViewModelProtocol{
-    
-    
+   
      private let service : CoreDataManagerProtocol
    weak var delegate: TaskDetailViewModelDelegate?
     private var task : Task?
@@ -51,9 +50,5 @@ class TaskDetailViewModel: TaskDetailViewModelProtocol{
         }else{
             return
         }
-          
-        
-        
     }
-    
 }
