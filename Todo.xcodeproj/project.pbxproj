@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		F87612EA27196DA80002C4E3 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87612E927196DA80002C4E3 /* TaskDetailViewModel.swift */; };
 		F8CA0DBD271F55F000D76F21 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CA0DBC271F55F000D76F21 /* NotificationManager.swift */; };
 		F8D022D52720045700C10BD1 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D022D42720045700C10BD1 /* Task+CoreDataProperties.swift */; };
+		F8D022ED27208C1C00C10BD1 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D022EC27208C1C00C10BD1 /* SplashScreenViewController.swift */; };
+		F8D022F32720973800C10BD1 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = F8D022F22720973800C10BD1 /* Hero */; };
+		F8D022F42720973800C10BD1 /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = F8D022F22720973800C10BD1 /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F8D022FF27213E9D00C10BD1 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D022FE27213E9D00C10BD1 /* SplashBuilder.swift */; };
 		F8E38D2E27137A6800639F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E38D2D27137A6800639F40 /* AppDelegate.swift */; };
 		F8E38D3027137A6800639F40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E38D2F27137A6800639F40 /* SceneDelegate.swift */; };
 		F8E38D3227137A6800639F40 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E38D3127137A6800639F40 /* TaskListViewController.swift */; };
@@ -55,6 +59,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F8D022F52720973900C10BD1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F8D022F42720973800C10BD1 /* Hero in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F87611D42718103D0002C4E3 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataClass.swift"; path = "../../Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F87611F6271825EA0002C4E3 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
@@ -67,6 +85,8 @@
 		F87612E927196DA80002C4E3 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		F8CA0DBC271F55F000D76F21 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		F8D022D42720045700C10BD1 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Task+CoreDataProperties.swift"; path = "../../Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F8D022EC27208C1C00C10BD1 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		F8D022FE27213E9D00C10BD1 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
 		F8E38D2A27137A6800639F40 /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E38D2D27137A6800639F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E38D2F27137A6800639F40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D022F32720973800C10BD1 /* Hero in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +157,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		F8D022EB27208BE300C10BD1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F8D022EC27208C1C00C10BD1 /* SplashScreenViewController.swift */,
+				F8D022FE27213E9D00C10BD1 /* SplashBuilder.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		F8E38D2127137A6800639F40 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +189,7 @@
 		F8E38D2C27137A6800639F40 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				F8D022EB27208BE300C10BD1 /* Splash */,
 				F8E38D2D27137A6800639F40 /* AppDelegate.swift */,
 				F8E38D2F27137A6800639F40 /* SceneDelegate.swift */,
 				F87611F6271825EA0002C4E3 /* AppContainer.swift */,
@@ -249,12 +280,16 @@
 				F8E38D2627137A6800639F40 /* Sources */,
 				F8E38D2727137A6800639F40 /* Frameworks */,
 				F8E38D2827137A6800639F40 /* Resources */,
+				F8D022F52720973900C10BD1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Todo;
+			packageProductDependencies = (
+				F8D022F22720973800C10BD1 /* Hero */,
+			);
 			productName = Todo;
 			productReference = F8E38D2A27137A6800639F40 /* Todo.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +361,9 @@
 				Base,
 			);
 			mainGroup = F8E38D2127137A6800639F40;
+			packageReferences = (
+				F8D022F12720973800C10BD1 /* XCRemoteSwiftPackageReference "Hero" */,
+			);
 			productRefGroup = F8E38D2B27137A6800639F40 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,6 +410,8 @@
 			files = (
 				F8E38DA32713857900639F40 /* TaskListInteractor.swift in Sources */,
 				F8E38D3227137A6800639F40 /* TaskListViewController.swift in Sources */,
+				F8D022ED27208C1C00C10BD1 /* SplashScreenViewController.swift in Sources */,
+				F8D022FF27213E9D00C10BD1 /* SplashBuilder.swift in Sources */,
 				F8F6F8F7271D9383006BC29E /* DateFormatter+Extensions.swift in Sources */,
 				F87612DB27196D7E0002C4E3 /* TaskDetailBuilder.swift in Sources */,
 				F87611D62718103D0002C4E3 /* Task+CoreDataClass.swift in Sources */,
@@ -719,6 +759,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8D022F12720973800C10BD1 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8D022F22720973800C10BD1 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8D022F12720973800C10BD1 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F8E38D3627137A6800639F40 /* Todo.xcdatamodeld */ = {
