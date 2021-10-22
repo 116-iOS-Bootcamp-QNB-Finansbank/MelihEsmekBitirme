@@ -17,7 +17,7 @@
 
 
 <p align="center">
-  <img  src="https://github.com/116-iOS-Bootcamp-QNB-Finansbank/MelihEsmekBitirme/tree/main/images/splash.png">
+  <img  src="https://github.com/116-iOS-Bootcamp-QNB-Finansbank/MelihEsmekBitirme/blob/main/images/splash.png">
 </p>
 
 
@@ -27,7 +27,7 @@
 
 
 <p align="center">
-  <img  src="https://github.com/116-iOS-Bootcamp-QNB-Finansbank/MelihEsmekBitirme/tree/main/images/list.png">
+  <img  src="https://github.com/116-iOS-Bootcamp-QNB-Finansbank/MelihEsmekBitirme/blob/main/images/list.png">
 </p>
 
 
@@ -37,5 +37,5 @@
 
 
 <p align="center">
-  <img  src="https://github.com/116-iOS-Bootcamp-QNB-Finansbank/MelihEsmekBitirme/tree/main/images/detail.png">
+  <img  src="https://github.com/116-iOS-Bootcamp-QNB-Finansbank/MelihEsmekBitirme/blob/main/images/detail.png">
 </p>
