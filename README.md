@@ -2,11 +2,11 @@
 
 
 
-## This is an basic ToDo application which was developed for Bo
-otcamp.
+## This is an basic ToDo application which was developed for Bootcamp.
 
 
 
  - I had use two design pattern in this project
-	> Viper pattern used for Task List screen
-	> MVVm pattern used for Task Detail screen
+	> **Viper** pattern used for Task List screen
+	
+	> **MVVM** pattern used for Task Detail screen
