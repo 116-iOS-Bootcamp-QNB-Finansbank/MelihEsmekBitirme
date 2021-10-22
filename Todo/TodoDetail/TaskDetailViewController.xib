@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskDetailViewController" customModule="Todo" customModuleProvider="target">
+            <connections>
+                <outlet property="taskDeadline" destination="PhM-uX-8KP" id="kmE-Va-Zdo"/>
+                <outlet property="taskDetail" destination="IV3-yd-XJv" id="BZE-qu-5bT"/>
+                <outlet property="taskTitleField" destination="lQ2-PY-Slr" id="nR7-E8-Lq5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="jem-gc-EgC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="cQS-D1-jEF">
+                    <rect key="frame" x="20" y="270" width="374" height="192"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iel-50-dJm">
+                            <rect key="frame" x="0.0" y="0.0" width="116.5" height="36"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.plaintext" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="J3X-px-0lJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="18" height="36"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IV3-yd-XJv">
+                                    <rect key="frame" x="33" y="0.0" width="83.5" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ksR-Nq-LPs">
+                            <rect key="frame" x="0.0" y="156" width="346" height="36"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aMS-Px-c3s">
+                                    <rect key="frame" x="0.0" y="1" width="21" height="33.5"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PhM-uX-8KP">
+                                    <rect key="frame" x="26" y="0.0" width="320" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="00R-y9-HMv"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="XON-mt-e71"/>
+                                    </constraints>
+                                </datePicker>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lQ2-PY-Slr">
+                    <rect key="frame" x="13" y="122" width="374" height="28"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKa-B4-K0G">
+                    <rect key="frame" x="0.0" y="828" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Save" id="ZiR-UQ-iAC">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="tabbedSaveButton:" destination="-1" id="BDj-ZH-Ygg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="273" style="plain" systemItem="fixedSpace" id="rRK-0R-McC"/>
+                        <barButtonItem title="Delete" image="trash.fill" catalog="system" id="9Jc-5N-rRu">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="tabbedDeleteButton:" destination="-1" id="D9H-PT-pHA"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cQS-D1-jEF" secondAttribute="bottom" constant="400" id="9jn-WW-COc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cQS-D1-jEF" secondAttribute="trailing" constant="20" id="cC2-cx-BJm"/>
+                <constraint firstItem="cQS-D1-jEF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="qYY-S5-BpE"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
